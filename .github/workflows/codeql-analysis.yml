@@ -67,9 +67,8 @@ jobs:
     - name: Build
       run: go build -v ./...
 
-    #- run: |
-    #   make bootstrap
-    #   make release
+    - run: |
+       mvn install -f client/java/jdbc/pom.xml
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
